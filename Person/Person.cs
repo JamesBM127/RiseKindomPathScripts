@@ -10,13 +10,4 @@ public abstract class Person : MonoBehaviour
 
     [HideInInspector]
     public bool isAlive = true;
-
-    public void Walk(ref float horizontal, 
-                     ref float vertical, 
-                     ref float speed) 
-    {
-        transform.Translate(new Vector3((horizontal * speed) * Time.deltaTime,
-                                        (vertical * speed) * Time.deltaTime,
-                                         0));
-    }
 }

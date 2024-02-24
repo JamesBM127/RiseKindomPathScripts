@@ -1,23 +1,15 @@
 using UnityEngine;
 
-public class WalkPlayer : PersonAnimation
+public class WalkPlayer : Walk
 {
-    //[HideInInspector]
-    public float walkSpeed = 1f;
-
     protected void Move()
     {
         attack = animator.GetCurrentAnimatorStateInfo(0).IsName($"Melee-Attack-{animatorDirection}");
         if (!attack)
+        {
+            horizontal = Input.GetAxis("Horizontal");
+            vertical = Input.GetAxis("Vertical");
             WalkMovimentAndAnimation();
-    }
-
-    private void WalkMovimentAndAnimation()
-    {
-        float horizontal = Input.GetAxis("Horizontal");
-        float vertical = Input.GetAxis("Vertical");
-
-        Walk(ref horizontal, ref vertical, ref walkSpeed);
-        WalkAnimation(animator, ref horizontal, ref vertical);
+        }
     }
 }

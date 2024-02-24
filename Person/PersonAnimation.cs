@@ -6,8 +6,8 @@ public class PersonAnimation : Person
     protected Animator animator;
 
     public void WalkAnimation(Animator animator,
-                              ref float horizontal,
-                              ref float vertical)
+                              float horizontal,
+                              float vertical)
     {
         SetAllAnimatorParametersFalse(animator);
 
